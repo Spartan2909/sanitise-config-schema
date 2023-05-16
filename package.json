@@ -10,7 +10,7 @@
         "jsonValidation": [
             {
                 "fileMatch": ["sanitise.yaml", "sanitise.yml", "sanity.yaml", "sanity.yml"],
-                "url": "schema.json"
+                "url": "https://raw.githubusercontent.com/Spartan2909/sanitise-config-schema/main/sanitise-config-schema.json"
             }
         ]
     }

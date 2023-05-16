@@ -1,7 +1,7 @@
 {
     "name": "sanitise-config-schema",
     "displayName": "Sanitise Config Schema",
-    "version": "v0.1.0",
+    "version": "0.1.0",
     "publisher": "Kleb",
     "engines": {
         "vscode": "^1.22.0"
@@ -15,5 +15,8 @@
         ]
     },
     "license": "(MIT OR Apache-2.0)",
-    "description": "A configuration schema for the sanitise crate"
+    "description": "A configuration schema for the sanitise crate",
+    "repository": {
+        "url": "https://github.com/Spartan2909/sanitise-config-schema"
+    }
 }

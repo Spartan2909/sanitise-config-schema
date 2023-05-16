@@ -1,0 +1,17 @@
+{
+    "name": "sanitise-config-schema",
+    "displayName": "Sanitise Config Schema",
+    "version": "v0.1.0",
+    "publisher": "Caleb Robson",
+    "engines": {
+        "vscode": "^1.22.0"
+    },
+    "contributes": {
+        "jsonValidation": [
+            {
+                "fileMatch": ["sanitise.yaml", "sanitise.yml", "sanity.yaml", "sanity.yml"],
+                "url": "schema.json"
+            }
+        ]
+    }
+}

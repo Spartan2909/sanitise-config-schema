@@ -2,7 +2,7 @@
     "name": "sanitise-config-schema",
     "displayName": "Sanitise Config Schema",
     "version": "v0.1.0",
-    "publisher": "Caleb Robson",
+    "publisher": "Kleb",
     "engines": {
         "vscode": "^1.22.0"
     },
@@ -13,5 +13,7 @@
                 "url": "https://raw.githubusercontent.com/Spartan2909/sanitise-config-schema/main/sanitise-config-schema.json"
             }
         ]
-    }
+    },
+    "license": "(MIT OR Apache-2.0)",
+    "description": "A configuration schema for the sanitise crate"
 }

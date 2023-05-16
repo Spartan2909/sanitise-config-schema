@@ -15,7 +15,7 @@
                     "sanity.yaml",
                     "sanity.yml"
                 ],
-                "url": "https://raw.githubusercontent.com/Spartan2909/sanitise-config-schema/main/sanitise-config-schema.json"
+                "url": "https://raw.githubusercontent.com/Spartan2909/sanitise-config-schema/main/sanitise-config-schema.yaml"
             }
         ]
     },

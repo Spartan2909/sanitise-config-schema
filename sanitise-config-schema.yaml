@@ -1,0 +1,129 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://raw.githubusercontent.com/Spartan2909/sanitise-config-schema/main/sanitise-config-schema.yaml"
+title: "Sanitise Config"
+description: "A configuration for the sanitise crate"
+type: object
+properties: {
+  on-title: {
+    description: "What to do when a title row is found",
+    type: string,
+    enum: [
+      once,
+      split
+    ]
+  },
+  processes: {
+    description: The processes to be executed,
+    type: array,
+    items: {
+      description: A process,
+      $ref: "#/$defs/process"
+    },
+    min-items: 1
+  }
+}
+required: [processes]
+additional-properties: false,
+$defs: {
+  process: {
+    description: "A process",
+    type: object,
+    properties: {
+      name: {
+        description: "The name of this process",
+        type: string
+      },
+      columns: {
+        description: The columns to process,
+        type: array,
+        items: {
+          description: "An operation to be applied to each entry in a column",
+          $ref: "#/$defs/column"
+        },
+        min-items: 1
+      }
+    },
+    required: [name, columns],
+    additional-properties: false
+  },
+  column: {
+    type: object,
+    properties: {
+      title: {
+        description: "The title of the column",
+        type: string
+      },
+      column-type: {
+        description: "The data type of the input column",
+        type: string,
+        one-of: [
+            boolean,
+            real,
+            integer,
+            string
+        ]
+      },
+      output-type: {
+        description: "The data type returned from this column",
+        type: string,
+        one-of: [
+            boolean,
+            real,
+            integer,
+            string
+        ]
+      },
+      null-surrogate: {
+        description: "A value to be treated as an empty entry if found",
+        type: [boolean, number, string]
+      },
+      valid-values: {
+        description: "A set of values to accept",
+        type: array,
+        items: {
+            type: [boolean, number, string]
+        }
+      },
+      on-invalid: {
+        description: "What to do when an invalid value is found",
+        type: string,
+        enum: [
+            abort,
+            average,
+            delete,
+            previous,
+            sentinel
+        ]
+      },
+      on-null: {
+        description: "What to do when a null entry is found",
+        type: string,
+        enum: [
+            abort,
+            average,
+            delete,
+            previous,
+            sentinel
+        ]
+      },
+      max: {
+        description: "The maximum value to accept",
+        type: [boolean, number, string]
+      },
+      min: {
+        description: "The minimum value to accept",
+        type: [boolean, number, string]
+      },
+      output: {
+        description: "An expression used to calculate the result",
+        type: string
+      },
+      ignore: {
+        description: "Ignore this column and exclude it from the output of this process",
+        type: boolean
+      }
+    },
+    required: [title, column-type],
+    additional-properties: false
+  }
+}

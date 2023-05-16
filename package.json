@@ -1,7 +1,7 @@
 {
     "name": "sanitise-config-schema",
     "displayName": "Sanitise Config Schema",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "publisher": "Kleb",
     "engines": {
         "vscode": "^1.22.0"
@@ -9,7 +9,12 @@
     "contributes": {
         "jsonValidation": [
             {
-                "fileMatch": ["sanitise.yaml", "sanitise.yml", "sanity.yaml", "sanity.yml"],
+                "fileMatch": [
+                    "sanitise.yaml",
+                    "sanitise.yml",
+                    "sanity.yaml",
+                    "sanity.yml"
+                ],
                 "url": "https://raw.githubusercontent.com/Spartan2909/sanitise-config-schema/main/sanitise-config-schema.json"
             }
         ]
